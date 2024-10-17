@@ -1,0 +1,32 @@
+<CoordinateSystem> { Z-Up }
+
+<Texture> roadTexture {
+  "models/map.png"
+  <Scalar> wrap { repeat }
+  <Scalar> minfilter { linear_mipmap_linear }
+  <Scalar> magfilter { linear }
+}
+
+<VertexPool> planeVertices {
+  <Vertex> 1 {
+    -20 0 0
+    <UV> { 0 0 }
+  }
+  <Vertex> 2 {
+    20 0 0
+    <UV> { 1 0 }
+  }
+  <Vertex> 3 {
+    20 40 0
+    <UV> { 1 1 }
+  }
+  <Vertex> 4 {
+    -20 40 0
+    <UV> { 0 1 }
+  }
+}
+
+<Polygon> {
+  <TRef> { roadTexture }
+  <VertexRef> { 1 2 3 4 <Ref> { planeVertices } }
+}
